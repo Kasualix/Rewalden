@@ -1,12 +1,28 @@
-//谁都不明白自己死后应该做点什么——就像人们不知道自己活着应该干什么一样。
 import crafttweaker.api.event.entity.MCEntityTravelToDimensionEvent;
 import crafttweaker.api.event.entity.player.MCPlayerLoggedInEvent;
+import crafttweaker.api.event.entity.player.MCPlayerRespawnEvent;
 import crafttweaker.api.event.entity.MCEntityJoinWorldEvent;
+import crafttweaker.api.event.tick.MCPlayerTickEvent;
 import crafttweaker.api.events.CTEventManager;
 
 CTEventManager.register<MCEntityJoinWorldEvent>((event) => {
     var entity = event.entity;
     if (!entity.world.remote && entity.type.classification == <entityclassification:monster>) event.cancel();
+});
+
+CTEventManager.register<MCPlayerRespawnEvent>((event) => {
+    var player = event.player;
+    if (player.world.remote) return;
+    player.addGameStage("death");
+});
+
+CTEventManager.register<MCPlayerTickEvent>((event) => {
+    var player = event.player;
+    var world = player.world;
+    if (world.remote) return;
+    if (player.hasGameStage("death") && !player.isSpectator()) {
+        world.asServerWorld().server.executeCommand("gamemode spectator " + player.name.formattedText, true);
+    }
 });
 
 CTEventManager.register<MCEntityTravelToDimensionEvent>((event) => {

@@ -2,7 +2,6 @@
     "name": "Lost City Dimension",
     "ultrawarm": false,
     "natural": true,
-    "fixed_time": 1728000,
     "coordinate_scale": 1,
     "has_skylight": true,
     "has_ceiling": false,
