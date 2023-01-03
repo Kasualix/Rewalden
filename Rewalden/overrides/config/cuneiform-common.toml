@@ -1,0 +1,14 @@
+
+#Features related to log filtering.
+[Filtering]
+	#Default: true
+	Enabled = true
+	#Any lines containing the following text will be removed from the logs.
+	"Strings To Remove" = ["[net.minecraft.util.Util]: No data fixer registered for", "[net.minecraft.command.Commands]: Ambiguity between arguments", "Incorrect key ", "javax.net.ssl.SSLHandshakeException", "Failed to download contributor list", "-atlas", "Registered custom recipe handler", "Failed to parse recipe", "com.google.gson.JsonSyntaxException", "Couldn't parse loot table", "Configuration file", "Can't keep up!", "Saving chunks for level", "Saving and pausing game...", "Unable to locate sound", " -> ", "Unnable to read supporter data. This is not likely an issue.", "SoundControl Sound Processor is lagging;", "Warning: Nashorn engine is planned to be removed from a future JDK release", "Tried to load a DUMMY block entity", "Tried to load a block entity for block", "[ForkJoinPool.commonPool-worker-3/INFO]", "All chunks are saved", "Reloading ResourceManager", "[blocks]", "[items]", "[fluids]", "[entity_types]", "[potions]", "[enchantments]", "[tile_entity_types]", "[functions]", "TagsUpdatedEvent", "Processing ", "died, message:"]
+	#Any lines matching the following regular expressions will be removed from the logs.
+	#Default: [\[net\.minecraftforge\.common\.ForgeConfigSpec\/CORE\]: Configuration file .* is not correct. Correcting, \[net\.minecraftforge\.common\.ForgeConfigSpec\/CORE\]: Incorrect key .* was corrected from .* to .*]
+	"Patterns To Remove" = ["\\[net\\.minecraftforge\\.common\\.ForgeConfigSpec\\/CORE\\]: Configuration file .* is not correct. Correcting", "\\[net\\.minecraftforge\\.common\\.ForgeConfigSpec\\/CORE\\]: Incorrect key .* was corrected from .* to .*"]
+	#Stack traces from the following exceptions will be truncated, leaving only the message.
+	#Default: [com.google.gson.JsonSyntaxException]
+	"Exceptions To Truncate" = ["com.google.gson.JsonSyntaxException", "javax.net.ssl.SSLHandshakeException", "java.net.ConnectException"]
+

@@ -1,0 +1,17 @@
+{
+    "name": "Lost City Dimension",
+    "ultrawarm": false,
+    "natural": true,
+    "fixed_time": 1728000,
+    "coordinate_scale": 1,
+    "has_skylight": true,
+    "has_ceiling": false,
+    "ambient_light": 0,
+    "piglin_safe": false,
+    "bed_works": false,
+    "respawn_anchor_works": false,
+    "has_raids": false,
+    "logical_height": 256,
+    "infiniburn": "minecraft:infiniburn_overworld",
+    "effects": "minecraft:overworld"
+}

@@ -1,0 +1,6 @@
+{
+  "retroGen": false,
+  "swapper": {
+    "minecraft:cobblestone_wall": "minecraft:stone_bricks"
+  }
+}
